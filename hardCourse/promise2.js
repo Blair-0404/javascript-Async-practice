@@ -45,4 +45,24 @@ loginUser('blair@gmail.com', 'blair')
   .then(videos => videoDetail(videos[0]))
   .then(detail => console.log(detail));
 
+const yt = new Promise(res => {
+  setTimeout(() => {
+    console.log('getting stuff from youtube');
+    res({videos: [1, 2, 3, 4, 5]})
+  }, 5000)
+});
+
+const fb = new Promise(res => {
+  setTimeout(() => {
+    console.log('getting stuff from facebook');
+    res({user: 'Name'})
+  }, 2000)
+});
+
+// Promise.all 사용해보기
+Promise.all([yt,fb])
+  .then(result => console.log(result));
+
+
+
 console.log('Finish');
