@@ -17,7 +17,7 @@ function getUserVideos(email, cb) {
 
 function videoDetail(video, cb) {
   setTimeout(() => {
-    cb(['title of the video']);
+    cb('title of the video');
   }, 1000)
 }
 
